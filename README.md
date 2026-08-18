@@ -71,13 +71,13 @@ chatbot/
 ├── backend/
 │   ├── main.py               # Point d'entrée FastAPI
 │   ├── requirements.txt      # Dépendances Python
-│   └── .env.example          # Modèle de variables d'environnement
+│   └── .env.local            # Modèle de variables d'environnement
 │
 ├── frontend/
 │   ├── src/                  # Composants et logique React
 │   ├── package.json          # Dépendances Node.js
 │   ├── tailwind.config.js    # Configuration Tailwind CSS
-│   └── .env.example          # Modèle de variables d'environnement
+│   └── .env.local            # Modèle de variables d'environnement
 │
 └── README.md
 ```
