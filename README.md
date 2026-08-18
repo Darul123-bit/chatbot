@@ -46,7 +46,7 @@ Le choix d'une architecture frontend/backend séparée permet de déployer chaqu
 │  Frontend          │ ─────────────────────▶ │  Backend             │ ────────────▶ │  PostgreSQL   │
 │  React 18 + Vite   │ ◀───────────────────── │  FastAPI + Uvicorn   │ ◀──────────── │  (Neon)       │
 │  Cloudflare Pages  │        JSON            │  Render              │               └───────────────┘
-└────────────────────┘                        └──────────┬───────────┘
+└────────────────────                         └──────────┬───────────┘
                                                          │ appel API
                                                          ▼
                                               ┌────────────────────────┐
@@ -69,13 +69,19 @@ Le choix d'une architecture frontend/backend séparée permet de déployer chaqu
 ```text
 chatbot/
 ├── backend/
-│   ├── main.py               # Point d'entrée FastAPI
+│   ├── main.py               # Point d'entrée FastAPI (routes de l'API)
+│   ├── database.py           # Connexion PostgreSQL (Neon) et modèle SQLAlchemy
 │   ├── requirements.txt      # Dépendances Python
 │   ├── .env.local            # Variables réelles (ignoré par git)
 │   └── .env.example          # Modèle versionné, sans valeurs sensibles
 │
 ├── frontend/
-│   ├── src/                  # Composants et logique React
+│   ├── src/
+│   │   ├── App.jsx            # Point d'entrée React, monte ChatWindow
+│   │   ├── components/
+│   │   │   └── ChatWindow.jsx # Interface de chat (messages, saisie, envoi)
+│   │   └── lib/
+│   │       └── api.js         # Appels HTTP vers le backend FastAPI
 │   ├── package.json          # Dépendances Node.js
 │   ├── tailwind.config.js    # Configuration Tailwind CSS
 │   ├── .env.local            # Variables réelles (ignoré par git)
