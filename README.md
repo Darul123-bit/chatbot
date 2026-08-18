@@ -43,16 +43,16 @@ Le choix d'une architecture frontend/backend séparée permet de déployer chaqu
 
 ```
 ┌────────────────────┐      HTTPS / REST      ┌──────────────────────┐      SQL      ┌───────────────┐
-│  Frontend            │ ─────────────────────▶ │  Backend               │ ────────────▶ │  PostgreSQL    │
-│  React 18 + Vite      │ ◀───────────────────── │  FastAPI + Uvicorn      │ ◀──────────── │  (Neon)         │
-│  Cloudflare Pages       │        JSON            │  Render                   │                └───────────────┘
-└────────────────────┘                         └──────────┬───────────┘
-                                                            │ appel API
-                                                            ▼
-                                                ┌────────────────────────┐
-                                                │  Google Gemini API        │
-                                                │  (Google AI Studio)         │
-                                                └────────────────────────┘
+│  Frontend          │ ─────────────────────▶ │  Backend             │ ────────────▶ │  PostgreSQL   │
+│  React 18 + Vite   │ ◀───────────────────── │  FastAPI + Uvicorn   │ ◀──────────── │  (Neon)       │
+│  Cloudflare Pages  │        JSON            │  Render              │               └───────────────┘
+└────────────────────┘                        └──────────┬───────────┘
+                                                         │ appel API
+                                                         ▼
+                                              ┌────────────────────────┐
+                                              │  Google Gemini API     │
+                                              │  (Google AI Studio)    │
+                                              └────────────────────────┘
 ```
 
 ## Stack technique
