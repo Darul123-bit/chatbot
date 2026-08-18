@@ -71,16 +71,20 @@ chatbot/
 ├── backend/
 │   ├── main.py               # Point d'entrée FastAPI
 │   ├── requirements.txt      # Dépendances Python
-│   └── .env.local            # Modèle de variables d'environnement
+│   ├── .env.local            # Variables réelles (ignoré par git)
+│   └── .env.example          # Modèle versionné, sans valeurs sensibles
 │
 ├── frontend/
 │   ├── src/                  # Composants et logique React
 │   ├── package.json          # Dépendances Node.js
 │   ├── tailwind.config.js    # Configuration Tailwind CSS
-│   └── .env.local            # Modèle de variables d'environnement
+│   ├── .env.local            # Variables réelles (ignoré par git)
+│   └── .env.example          # Modèle versionné, sans valeurs sensibles
 │
 └── README.md
 ```
+
+> `.env.local` contient tes vraies valeurs et ne doit **jamais** être commité (Vite l'ignore par défaut, vérifie que `.gitignore` le liste aussi pour le backend). `.env.example` reste versionné comme référence pour quiconque installe le projet.
 
 ## Prérequis
 
@@ -106,7 +110,7 @@ cd backend
 python -m venv venv
 source venv/bin/activate      # Windows : venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env.local     # puis renseigner les vraies valeurs
 ```
 
 **3. Frontend**
@@ -114,7 +118,7 @@ cp .env.example .env
 ```bash
 cd ../frontend
 npm install
-cp .env.example .env
+cp .env.example .env.local     # puis renseigner les vraies valeurs
 ```
 
 **4. Base de données**
@@ -126,7 +130,7 @@ cp .env.example .env
 
 ## Variables d'environnement
 
-**Backend (`backend/.env`)**
+**Backend (`backend/.env.local`)**
 
 | Variable | Description |
 | :--- | :--- |
@@ -135,13 +139,13 @@ cp .env.example .env
 | `CORS_ORIGINS` | Origines autorisées à appeler l'API |
 | `ENV` | `development` ou `production` |
 
-**Frontend (`frontend/.env`)**
+**Frontend (`frontend/.env.local`)**
 
 | Variable | Description |
 | :--- | :--- |
 | `VITE_API_BASE_URL` | URL du backend FastAPI (ex : `http://localhost:8000`) |
 
-Les fichiers `.env` réels ne doivent jamais être commités ; seuls les `.env.example` sont versionnés.
+Les fichiers `.env.local` ne doivent jamais être commités ; seuls les `.env.example` sont versionnés.
 
 ## Lancement en local
 
