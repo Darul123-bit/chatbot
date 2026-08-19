@@ -1,5 +1,10 @@
 # Chatbot AI — Assistant Conversationnel Collaboratif
 
+
+<div align="center">
+  <img src="../frontend/src/assets/chat04.jpeg" alt="Chatbot Logo" width="200">
+</div>
+
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
