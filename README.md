@@ -2,7 +2,7 @@
 
 
 <div align="center">
-  <img src="../frontend/src/assets/chat04.jpeg" alt="Chatbot Logo" width="200">
+  <img src="frontend/src/assets/chat04.jpeg" alt="Chatbot Logo" width="200">
 </div>
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
